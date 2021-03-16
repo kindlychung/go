@@ -126,6 +126,12 @@ func sameline(a, b src.XPos) bool {
 	return p.Base() == q.Base() && p.Line() == q.Line()
 }
 
+func yywarnl(pos src.XPos, format string, args ...interface{}) {
+	msg := fmt.Sprintf(format, args...)
+	msg = fmt.Sprintf("WARNING: %v: %s", linestr(pos), msg)
+	fmt.Println(msg)
+}
+
 func yyerrorl(pos src.XPos, format string, args ...interface{}) {
 	msg := fmt.Sprintf(format, args...)
 
@@ -302,7 +308,7 @@ func importdot(opkg *types.Pkg, pack *Node) {
 
 	if n == 0 {
 		// can't possibly be used - there were no symbols
-		yyerrorl(pack.Pos, "imported and not used: %q", opkg.Path)
+		yywarnl(pack.Pos, "imported and not used: %q", opkg.Path)
 	}
 }
 
