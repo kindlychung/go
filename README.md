@@ -3,6 +3,17 @@
 Go is an open source programming language that makes it easy to build simple,
 reliable, and efficient software.
 
+## Modifications
+
+* Created a `yywarnl` function
+* Changed all `yyerrorl` to `yywarnl` when there is `declared but not used` error
+
+## Build 
+
+* Make sure you have a recent version of go already installed (you need go to build itself)
+* `cd src && ./make.bash`
+
+
 ![Gopher image](https://golang.org/doc/gopher/fiveyears.jpg)
 *Gopher image by [Renee French][rf], licensed under [Creative Commons 3.0 Attributions license][cc3-by].*
 
