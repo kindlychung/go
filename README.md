@@ -10,8 +10,10 @@ reliable, and efficient software.
 
 ## Build 
 
-* Make sure you have a recent version of go already installed (you need go to build itself)
-* `cd src && ./make.bash`
+* _Make sure you have a recent version of go already installed_ (you need go to build itself)
+  * If you installed go by your system package manager or brew, you are all set
+  * If your previous installation of go is done from source, you need to keep the old repo as your bootstrap root. For example, if you have a repo `~/goProjects/go` in which you have built your previous version of go, you need to `cp -av ~/goProjects/go ~/goProjects/go_old && export GOROOT_BOOTSTRAP=~/goProjects/go_old`
+* Now you can build go with your old version of go: `cd src && ./make.bash`
 
 
 ![Gopher image](https://golang.org/doc/gopher/fiveyears.jpg)
